@@ -6,7 +6,7 @@ const srcPath = path.resolve(__dirname, './src');
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '',
+  base: process.env.NODE_ENV === 'production' ? '/sineaters/' : '',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -34,4 +34,4 @@ export default defineConfig({
       ]
     }
   },
-})
+});
