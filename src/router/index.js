@@ -13,7 +13,6 @@ import glossaryNotFound from '@/glossary/GlossaryNotFound.vue';
 import notFound from '@/views/site/NotFound.vue';
 
 const titleMaker = (...t) => t.concat('Sin Eaters').join(' - ');
-const nameMaker = (...t) => t.join('.');
 
 // -------------------------------------------------------------------------------------
 // core

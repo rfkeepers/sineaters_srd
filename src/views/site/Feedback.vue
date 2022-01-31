@@ -8,7 +8,7 @@
         <span>Have some feedback about Sin Eaters?</span>
         <span>Maybe you just want to say "Hello!"?</span>
         <span>&nbsp;</span>
-        <span>Go ahead and tell me what's good at:</span>
+        <span>Go ahead and tell us what's good at:</span>
         <span><a href="mailto:emmy.holthe.author@gmail.com">emmy.holthe.author@gmail.com</a>.</span>
         <span><a href="mailto:keepers@innumerable-engines.net">keepers@innumerable-engines.net</a>.</span>
     </div>
