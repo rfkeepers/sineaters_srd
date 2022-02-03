@@ -71,7 +71,7 @@ import ExitBane from '@/glossary/moves/ExitBane.vue';
     Bane
 </h2>
 <p>
-    Bane is still a work in progress.  We know you can choose to take it when you take harm.  But what is it, really?  A condition?  Maybe.  We're thinking on it.  One of our ideas goes like this:
+    Bane is still a work in progress.  We know you can choose to take it when you take harm.  But what is it, really?  A condition?  Maybe.  We're thinking on it.  One of our ideas is a downtime ability that goes like this:
 </p>
 <p>
     <ExitBane />

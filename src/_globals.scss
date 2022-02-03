@@ -241,13 +241,15 @@ aside {
 // thing, but can also just quote fictional things.
 blockquote {
   border-left: 2px solid var(--color-text-darker);
-  padding: 24px 36px 12px 36px;
-  margin: 24px 0 8px 16px;
+  padding: 24px 12px 12px 36px;
+  margin: 0;
+  margin: 24px 0% 8px 0%;
   color: var(--color-text-norm);
   background-color: var(--color-neutral-void);
 
   @media screen and (max-width: 900px) {
     margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -431,9 +433,14 @@ figcaption {
 
 .quote {
   border-left: 2px solid var(--color-text-darker);
-  padding: 2px 16px;
+  padding: 2px 12px 2px 24px;
+  margin: 12px 0 8px 0;
   color: var(--color-text-norm);
   background-color: var(--color-neutral-void);
+
+  @media screen and (max-width: 900px) {
+    padding-right: 12px;
+  }
 }
 
 .playExample {
@@ -497,13 +504,17 @@ figcaption {
 
 .alert {
   padding: 16px;
-  margin-bottom: 32px;
+  margin: 24px 8% 8px 8%;
   border: 1px solid var(--color-detail-lighter, white);
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--color-highlight-norm);
+
+  @media screen and (max-width: 900px) {
+    margin: 24px 16px 8px 16px;
+  }
 }
 
 .break {

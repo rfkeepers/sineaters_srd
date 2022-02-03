@@ -19,13 +19,6 @@ import Options from '@/components/Options.vue';
     Sin Eaters is a role playing game about people who delve into the boundless figments and hauntings of the mind.  The theme is inspired by works like <i>Psychonauts</i>, <i>The Cell (2002)</i>, <i>To The Moon</i>, and <i>Inception</i>.  Within, we follow a crew of characters risking personal sacrifice to journey into the mental universe of the traumatized and the dying, to save them from themselves.
 </p>
 
-<br>
-<div class="alert">
-    <p>
-        Here for a playtest?  Check out the <router-link to="playtesting">playtesting page</router-link> for a guide.
-    </p>
-</div>
-
 <h2>
     What is a Sin Eater?
 </h2>
@@ -66,7 +59,12 @@ import Options from '@/components/Options.vue';
     Everybody has a secret world inside of them. I mean everybody. All of the people in the whole world, I mean everybody — no matter how dull and boring they are on the outside. Inside them they’ve all got unimaginable, magnificent, wonderful, stupid, amazing worlds…
     <figcaption>Niel Gaiman</figcaption>
 </blockquote>
-
+<br>
+<div class="alert">
+    <p>
+        Here for a playtest?  Check out the <router-link to="playtesting">playtesting page</router-link> for a guide.
+    </p>
+</div>
 </div>
 </template>
 
