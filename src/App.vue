@@ -23,13 +23,18 @@ const showNavs = () => {
 
 // ---------- nav display options
 const aboutLinks = [
-  {to: "/", text: "Home"},
   {to: "/feedback", text: "Feedback"},
   {to: "https://www.innumerable-engines.net", external: true, text: "Innumerable Engines"},
 ];
 const contentLinks = [
-  {to: "/", text: "Intro"},
+  {to: "/", text: "Home"},
+  {to: "/playtesting", text: "Playtesting"},
   {to: "/rolling", text: "Rolling"},
+  {to: "/harm", text: "Harm"},
+  {to: "/banes", text: "Banes"},
+  {to: "/chargen", text: "Character Creation"},
+  {to: "/world", text: "The World"},
+  {to: "/pockets", text: "Pocket Reality"},
 ];
 const glossaryLinks = [
   {to: "/glossary/landing", text: "Glossary"},

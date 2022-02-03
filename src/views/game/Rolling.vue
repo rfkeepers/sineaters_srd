@@ -45,7 +45,7 @@ defineProps({
             "This lady is all kinds of shifty," Emmy says, "I think she's hiding something.  I'm going to go up and look her in the eye and say, 'you're awful quiet.  I think you're holding out.  Gonna spill it?'"
         </p>
         <p>
-            "Okay," the GM agrees, "lets get a roll.  You haven't entered her father's mind yet, so thats one D12."
+            "Okay," the GM agrees, "lets get a roll.  We're still in the real world, so thats one D12."
         </p>
         <p>
             <i>Em rolls a 9.</i>  "So close," she says.
@@ -86,11 +86,11 @@ defineProps({
         When inside a pocket reality, you can reroll your dice pool anytime you want.  Stuck with a single 1?  Reroll your pool!  You rolled five 1's?  Reroll your pool!  Out of dice?  Well, now you have to reroll your pool!
     </p>
     <p>
-        Every time you reroll, you take a token of <em>Instability</em>.  In other people's realities, you're an anomaly.  A germ.  A foreign object.  Likewise, you're out of your element, too.  The longer you stay there, the more your Instability builds, eventually leading to Something Bad.  (Developer note, we're still figuring out what that is.  But it's super duper bad news bears.  Promise.  Probably.)
+        Every time you reroll, you take a token of <em>Instability</em>.  Within other people's realities you're an anomaly.  A germ.  A foreign object.  Likewise, you're out of your element, too.  The longer you stay there, the more your Instability builds, eventually causing a breach.
     </p>
     <div class="playExample">
         <p>
-            "Whatever that thing is," the GM explains, "it's got that guy in its jaws and is dragging him down the street.  He's screaming and flailing at it, there's dust kicking up everywhere, so the going is petty slow."
+            "That enormous beast, whatever it is," the GM explains, "it's got a guy in its jaws and is dragging him down the street.  He's screaming and flailing at it, there's dust kicking up everywhere, the going is petty slow."
         </p>
         <p>
             "Definitely want to put an end to that."  Keepers says, "how can I, like, distract it, or try and break the guy free?  I think I'm going to run over and kick that thing in its side.  Try and make it drop the dude."
@@ -99,10 +99,10 @@ defineProps({
             "That will need a roll, let's see how it goes."
         </p>
         <p>
-            Keepers looks at his dice, he only has one left, and it's a 5.  "I want this to happen, so I'm going to take Instability and reroll.  Lets see: 2, 5, 2, 4, 3.  I'm going to spend the 4 and 3, so that's 7, a partial success, right?"
+            Keepers looks at his dice.  He only has one left, and it's a 5.  "Don't want to fail this one, I'm going to take Instability and reroll.  Lets see: 2, 5, 2, 4, 3.  I'm going to spend the 4 and 3, so that's 7, a partial success, right?"
         </p>
         <p>
-            The GM nods, "yeah.  You give this thing a solid kick, and it drops the guy.  Then it immediately starts snapping at your legs.  As you're trying to avoid those jaws, it catches one of your boots in its mouth.  What do you do?"
+            The GM nods, "yeah.  You give the beast a solid kick, causing it to drop the guy.  It immediately turns its attention to you, growling and snapping at your legs.  You're trying to avoid it, but those big jaws catch you by the foot, tugging at your boot.  What do you do?"
         </p>
     </div>
 

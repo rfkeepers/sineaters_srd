@@ -16,8 +16,15 @@ import Options from '@/components/Options.vue';
 </blockquote>
 
 <p>
-    Sin Eaters is a role playing game about people who delve into the boundless figments and hauntings of the mind.  The theme is inspired by works like <i>Psychonauts</i>, <i>The Cell (2002)</i>, <i>To The Moon</i>, and <i>Inception</i>.  Within, we follow a crew of characters risking self-sacrifice to journey into the mental universe of the traumatized and the dying, and save them from themselves.
+    Sin Eaters is a role playing game about people who delve into the boundless figments and hauntings of the mind.  The theme is inspired by works like <i>Psychonauts</i>, <i>The Cell (2002)</i>, <i>To The Moon</i>, and <i>Inception</i>.  Within, we follow a crew of characters risking personal sacrifice to journey into the mental universe of the traumatized and the dying, to save them from themselves.
 </p>
+
+<br>
+<div class="alert">
+    <p>
+        Here for a playtest?  Check out the <router-link to="playtesting">playtesting page</router-link> for a guide.
+    </p>
+</div>
 
 <h2>
     What is a Sin Eater?
@@ -29,15 +36,15 @@ import Options from '@/components/Options.vue';
 </blockquote>
 
 <p>
-    The dying are consumed by their sins at the edge of their life.  Death for the sinful damns their soul to the earth, to plague the living as wraiths and ghosts forever more.  Penance cannot help them.  Their body is failing, they cannot perform the rites.  Their loved ones must make a choice: let them die in the horror of their own failings, or call out for you: a sin eater.
+    At the edges of their life the dying are consumed by their sins.  Death will damn their soul to the earth, to plague the living as wraiths and ghosts forever more.  Penance cannot help them.  Their body is quickly failing, they can no longer perform the rites.  The family and friends close by must make a choice: let them die an unclean, damned death; or call out for you, a sin eater.
 </p>
 
 <p>
-    Sin eating was a real practice in the UK and other parts of the world between 1600 and 1900.  Sin eater were called to help those on the verge of death, their job to undertake a ritual meal whereby the sins of the dying were passed onto the food, and then into the eater.
+    Sin eating was a real practice in the UK and other parts of the world throughout the 1600s to the 1900s.  Sin eaters were called to help those on the verge of death, their job to undertake a ritual meal where the sins of the dying were passed onto the food, and then into the eater.
 </p>
 
 <p>
-    And what did they get for their service?  A little money, and enormous shame.  You see, a sin eater bore all the sins of those whom they've served.  They were living anathema, walking hell.  The person who carries such tarnish has no good place in society.
+    And what did they get for their service?  A little money along with enormous shame.  You see, a sin eater bore all the sins of those whom they've served.  They were living anathema, walking hell.  The person who carries such tarnish has no good place in society.
 </p>
 
 <p>
@@ -45,20 +52,9 @@ import Options from '@/components/Options.vue';
 </p>
 
 <h2>
-    In this game:
+    In this game, you will...
 </h2>
-
-<blockquote>
-    Everybody has a secret world inside of them. I mean everybody. All of the people in the whole world, I mean everybody — no matter how dull and boring they are on the outside. Inside them they’ve all got unimaginable, magnificent, wonderful, stupid, amazing worlds…
-    <figcaption>Niel Gaiman</figcaption>
-</blockquote>
-<blockquote>
-    (alternate quote choice)<br>
-    The mind is not a book, to be opened at will and examined at leisure. Thoughts are not etched on the inside of skulls, to be perused by an invader. The mind is a complex and many-layered thing...
-    <figcaption>Severus Snape</figcaption>
-</blockquote>
-
-<p>You can expect to:</p>
+<br>
 <Options bullet="ϟ" asHtml :options="[
     'Navigate <strong>psychic landscapes</strong>',
     'Help others through <strong>their past suffering</strong> at the cost of your own well-being',
@@ -66,13 +62,11 @@ import Options from '@/components/Options.vue';
     'Work past <strong>your own demons</strong> with time, care, and help',
 ]" />
 
-<h2>
-    State of the game:
-</h2>
+<blockquote>
+    Everybody has a secret world inside of them. I mean everybody. All of the people in the whole world, I mean everybody — no matter how dull and boring they are on the outside. Inside them they’ve all got unimaginable, magnificent, wonderful, stupid, amazing worlds…
+    <figcaption>Niel Gaiman</figcaption>
+</blockquote>
 
-<p>
-    Sin eaters is in pre-alpha.  We're just starting on this adventure, figuring out everything from the ground up, and are so glad you're taking part in it.  Thank you!
-</p>
 </div>
 </template>
 

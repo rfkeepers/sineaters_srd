@@ -1,0 +1,60 @@
+<!-- ============================== Script ============================== -->
+<script setup>
+import Options from '@/components/Options.vue';
+</script>
+
+<!-- ============================== Template ============================== -->
+<template>
+<div>
+<h1 class="title">
+    Playtesting Guide
+</h1>
+
+<p>
+    Hey there, thanks for joining a playtest.  We're just starting on this adventure, figuring out everything from the ground up, and are so glad you're taking part in it.
+</p>
+<p>
+    This page is a reference sheet, to help guide you through what you need to know about playing the game.
+</p>
+
+<h2>
+    How To Play
+</h2>
+<div class="blurb guideLinks">
+    <br>
+    ϟ&nbsp;&nbsp;<router-link to="rolling">Dice and Rolling Rules</router-link>
+    <br><br>
+    ϟ&nbsp;&nbsp;<router-link to="harm">Harm</router-link>
+    <br><br>
+    ϟ&nbsp;&nbsp;<router-link to="banes">Bane, Instability, and Malefaction</router-link>
+    <br><br>
+    ϟ&nbsp;&nbsp;<router-link to="charactercreation">Character Creation</router-link>
+</div>
+
+<h2>
+    About The Setting
+</h2>
+<div class="blurb guideLinks">
+    <br>
+    ϟ&nbsp;&nbsp;<router-link to="worldbuilding">The World</router-link>
+    <br><br>
+    ϟ&nbsp;&nbsp;<router-link to="rituals">Pocket Reality and Ritual</router-link>
+    <br>
+</div>
+
+<h2>
+    Play Tools
+</h2>
+<div class="blurb guideLinks">
+    <br>
+    ϟ&nbsp;&nbsp;<router-link to="dicetool">Dice Roller</router-link>
+</div>
+</div>
+</template>
+
+<!-- ============================== Style ============================== -->
+<style lang="scss" scoped>
+.guideLinks {
+    font-size: 1.2em;
+}
+</style>

@@ -2,7 +2,9 @@
 
 $color-headers: #7A4419;
 $color-highlight: #E8E9F3;
-$color-detail: #755C1B;
+// $color-detail: #755C1B;
+// $color-detail: #C89C2D;
+$color-detail: #B78F2A;
 $color-background: #090C08;
 $color-text: #CECECE;
 $color-neutral: #29363D;
@@ -47,9 +49,9 @@ $color-neutral: #29363D;
 
   --header-color-background: var(--color-neutral-darker);
   --header-color-border: var(--color-detail-norm);
-  --header-color-title-1: var(--color-headers-norm);
+  --header-color-title-1: var(--color-detail-dark);
 
-  --link-color: var(--color-headers-light);
+  --link-color: var(--color-detail-lighter);
   --link-color-active: var(--color-text-norm);
 
   --move-color-border: var(--color-text-dark);
@@ -129,7 +131,6 @@ em {
   font-weight: 500;
   font-style: normal;
   font-size: 1.1em;
-  text-transform: uppercase;
 }
 
 hr {
@@ -240,10 +241,14 @@ aside {
 // thing, but can also just quote fictional things.
 blockquote {
   border-left: 2px solid var(--color-text-darker);
-  padding: 12px 36px 12px 36px;
+  padding: 24px 36px 12px 36px;
   margin: 24px 0 8px 16px;
   color: var(--color-text-norm);
   background-color: var(--color-neutral-void);
+
+  @media screen and (max-width: 900px) {
+    margin-left: 0;
+  }
 }
 
 figcaption {
@@ -253,6 +258,10 @@ figcaption {
 
   &::before {
     content: "- "
+  }
+
+  @media screen and (max-width: 900px) {
+    padding-left: 50%;
   }
 }
 
@@ -422,10 +431,9 @@ figcaption {
 
 .quote {
   border-left: 2px solid var(--color-text-darker);
-  padding: 12px 36px 12px 36px;
-  margin: 24px 0 8px 16px;
+  padding: 2px 16px;
   color: var(--color-text-norm);
-  background-color: var(--color-background-norm);
+  background-color: var(--color-neutral-void);
 }
 
 .playExample {
@@ -490,7 +498,7 @@ figcaption {
 .alert {
   padding: 16px;
   margin-bottom: 32px;
-  border: 1px solid var(--color-highlight, white);
+  border: 1px solid var(--color-detail-lighter, white);
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -507,4 +515,8 @@ figcaption {
   @media screen and (min-width: 900px) {
     display: none;
   }
+}
+
+.center {
+  text-align: center;
 }
