@@ -36,7 +36,7 @@ import Options from '@/components/Options.vue';
 </h2>
 <div class="blurb guideLinks">
     <br>
-    ϟ&nbsp;&nbsp;<router-link to="world">The World</router-link>
+    ϟ&nbsp;&nbsp;<router-link to="setting">The Setting</router-link>
     <br><br>
     ϟ&nbsp;&nbsp;<router-link to="pockets">Pocket Reality and Ritual</router-link>
     <br>

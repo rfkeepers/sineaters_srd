@@ -1,7 +1,8 @@
 <!-- ============================== Script ============================== -->
 <script setup>
 import Options from '@/components/Options.vue';
-import ExitBane from '@/glossary/moves/ExitBane.vue';
+import Desperation from '@/glossary/moves/Desperation.vue';
+import Exit from '@/glossary/moves/Exit.vue';
 </script>
 
 <!-- ============================== Template ============================== -->
@@ -71,10 +72,13 @@ import ExitBane from '@/glossary/moves/ExitBane.vue';
     Bane
 </h2>
 <p>
-    Bane is still a work in progress.  We know you can choose to take it when you take harm.  But what is it, really?  A condition?  Maybe.  We're thinking on it.  One of our ideas is a downtime ability that goes like this:
+    Bane is still a work in progress.  We know you can choose to take it when you take harm.  But what is it, really?  A condition?  Maybe.  We're thinking on it.  Here are some of our ideas for its usage:
 </p>
 <p>
-    <ExitBane />
+    <Desperation />
+</p>
+<p>
+    <Exit />
 </p>
 
 </div>

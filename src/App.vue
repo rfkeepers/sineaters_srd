@@ -33,7 +33,7 @@ const contentLinks = [
   {to: "/harm", text: "Harm"},
   {to: "/banes", text: "Banes"},
   {to: "/chargen", text: "Character Creation"},
-  {to: "/world", text: "The World"},
+  {to: "/setting", text: "The Setting"},
   {to: "/pockets", text: "Pocket Reality"},
 ];
 const glossaryLinks = [

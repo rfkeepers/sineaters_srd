@@ -42,7 +42,7 @@ defineProps({
 
     <div class="playExample">
         <p>
-            "This lady is all kinds of shifty," Emmy says, "I think she's hiding something.  I'm going to go up and look her in the eye and say, 'you're awful quiet.  I think you're holding out.  Gonna spill it?'"
+            "This lady is all kinds of shifty," Emmy says, "I think she's got something she's hiding.  I'm going to go up and look her in the eye and say, 'you're awful quiet.  I think you're holding out.  Gonna spill it?'"
         </p>
         <p>
             "Okay," the GM agrees, "lets get a roll.  We're still in the real world, so thats one D12."

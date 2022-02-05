@@ -24,7 +24,7 @@ import Options from '@/components/Options.vue';
 </h2>
 <br>
 <Options bullet="⌭" asHtml :options="[
-    '<b>Body</b> (choose as many as you want): tall, short, big, small, built, fragile, masculine, feminine, ambiguous.',
+    '<b>Body</b> (choose as many as you want): tall, short, big, small, built, fragile, masculine, feminine, ambiguous, old, young.',
     '<b>Style:</b> ordinary, fancy, expensive, disheveled, ragged, unique.',
     '<b>Attitude:</b> mirthful, pensive, irked, eager, curious, worried, flat.',
 ]"/>

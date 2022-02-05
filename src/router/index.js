@@ -11,7 +11,7 @@ import playtesting from '@/views/game/Playtesting.vue';
 import rolling from '@/views/game/Rolling.vue';
 
 import pockets from '@/views/setting/Pockets.vue';
-import world from '@/views/setting/World.vue';
+import setting from '@/views/setting/Setting.vue';
 
 
 import glossary from '@/views/site/Glossary.vue';
@@ -148,15 +148,15 @@ routes = routes.concat([
     },
   },
   {
-    path: '/world',
-    name: 'The World',
-    component: world,
+    path: '/setting',
+    name: 'The Setting',
+    component: setting,
     meta: {
-      title: titleMaker('The World'),
+      title: titleMaker('The Setting'),
       tags: [
         {
           name: 'description',
-          content: 'The setting and world in Sin Eaters.',
+          content: 'The setting of the world of Sin Eaters.',
         }
       ],
     },

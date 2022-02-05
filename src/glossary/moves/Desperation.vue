@@ -1,26 +1,18 @@
 <!-- ============================== Script ============================== -->
 <script setup>
 import Move from "@/components/Move.vue";
-import Options from "@/components/Options.vue";
-import Roll from "@/components/Roll.vue";
 
-const name = 'Exit';
+const name = 'Desperation';
 </script>
 
 <!-- ============================== Template ============================== -->
 <template>
-<Move id="exit_bane" leftLined>
+<Move id="desperation" leftLined>
     <template v-slot:name>{{name}}</template>
     <template v-slot:body>
         <p>
-            When you <strong>exit a pocket reality</strong>, roll <em>1d12+BANE</em> then set your Bane to 0.  On a <b>12+</b> the gm/player chooses two/gains 2 hold.  On a <b>5-9</b> the gm/player chooses one/gains 1 hold.  (if hold, spend 1:1 to…).  The same option may be chosen more than once.
+            Whenever you use a move, you can <strong>describe your character in a desperate position</strong>, giving it all they've got.  If you do, roll an additional 1d6 and add its value to the dice you pulled from your pool.  If the die you rolled is higher than your Bane, you're safe, everything goes fine.  If it is equal to or lower than your current Bane, or if it rolls a 1, you're screwed.  Increase your Bane by 1, then the GM will tell you how, in your moment of desperation, you took things too far and caused additional collateral damage or problems.
         </p>
-        <Options bullet="ϟ" :options="[
-            'You give in to vice or decadence.',
-            'You disconnect from people and are unreachable for a period of time.',
-            'You take it out on someone close to you.',
-            'You gain a hitch-hiker.',
-        ]" />
     </template>
     <template v-slot:example>
         <h3 class="lineTo indent">Design Thoughts</h3>
