@@ -16,7 +16,7 @@ $color-neutral: #29363D;
 
 :root {
   $color-percents: (-32%, -24%, -16%, -8%, 0%, 8%, 16%, 24%, 32%);
-  $color-names: (void, darkest, darker, dark, norm, light, lighter, lighest, sunbeam);
+  $color-names: (void, darkest, darker, dark, norm, light, lighter, lightest, sunbeam);
   @for $i from 1 through 9 {
     $pct: nth($color-percents, $i);
     $name: nth($color-names, $i);
@@ -67,7 +67,7 @@ $color-neutral: #29363D;
 
   --sidebarMenu-color-list-border: var(--color-detail-darker);
   --sidebarMenu-color-list-background: var(--color-neutral-void);
-  --sidebarMenu-color-text: var(--color-detail-norm);
+  --sidebarMenu-color-text: var(--color-headers-lighter);
 
   --stat-color: var(--color-highlight-norm);
 }
@@ -280,6 +280,7 @@ figcaption {
 .pageBody {
   padding-top: 1em;
   flex-grow: 1;
+  padding-bottom: 80px;
 
   @media screen and (max-width: 900px) {
     padding: 1em;

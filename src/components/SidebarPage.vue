@@ -133,6 +133,12 @@ onUnmounted(() => {
     @media screen and (min-width: 1280px) {
         padding: 0 10%;
     }
+
+    &:after {
+        content: "";
+        height: 80px;
+        display: block;
+    }
 }
 
 .sidebar {

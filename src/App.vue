@@ -152,7 +152,6 @@ onUnmounted(() => {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
-  padding-bottom: 80px;
 }
 </style>
 

@@ -66,17 +66,17 @@ const setHash = hash => {
 <style lang="scss" scoped>
 .menu {
     display: flex;
-    padding-left: 24px;
-    font-size: 1.35em;
+    padding-left: 36px;
+    font-size: 1.65em;
     color: var(--sidebarMenu-color-text, white);
 
     @media screen and (max-width: 900px) {
-        font-size: 1.5em;
+        font-size: 1.75em;
     }
 
     &__outer {
-        padding-left: 36px;
-        padding-top: 16px;
+        padding-left: 44px;
+        padding-top: 12px;
 
         @media screen and (max-width: 900px) {
             padding-top: 8px;
@@ -85,7 +85,7 @@ const setHash = hash => {
 }
 
 .entry {
-    padding-top: 8px;
+    padding-top: 12px;
 
     &__label:hover {
         cursor: pointer;
@@ -93,18 +93,22 @@ const setHash = hash => {
     }
 
     @media screen and (max-width: 900px) {
-        padding-top: 16px;
+        padding-top: 20px;
     }
 }
 
 .submenu {
-    font-size: 0.625em;
+    font-size: 0.5em;
+
+    @media screen and (max-width: 900px) {
+        font-size: 0.5em;
+    }
 }
 
 .close {
     position: absolute;
     right: 31px;
-    top: 22px;
+    top: 24px;
     font-size: 1.2em;
     color: var(--sidebarMenu-color-icon, white);
     transform: scaleX(1.5);
