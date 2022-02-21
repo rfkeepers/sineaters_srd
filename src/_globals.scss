@@ -63,6 +63,10 @@ $color-neutral: #29363D;
   --nav-color-flag: var(--color-highlight-norm);
   --nav-color-text: var(--color-text-norm);
 
+  --option-color-bullet: var(--color-detail-lighter);
+
+  --sidebarMenu-color-list-border: var(--color-detail-darker);
+  --sidebarMenu-color-list-background: var(--color-neutral-void);
   --sidebarMenu-color-text: var(--color-detail-norm);
 
   --stat-color: var(--color-highlight-norm);
@@ -186,8 +190,7 @@ h3 {
 h4 {
   color: var(--color-headers-norm);
   margin: 0;
-  margin-bottom: 4px;
-  font-size: 1.25em;
+  font-size: 1.15em;
   margin-block-start: 1.75em;
 }
 
@@ -309,7 +312,7 @@ figcaption {
   &:before {
     content: "";
     display: block;
-    width: 20vw;
+    width: 10vw;
     height: 1px;
     background: linear-gradient(90deg, var(--color-background-norm) 50%, var(--color-detail-norm));
     right: calc(100% + 12px);
@@ -321,6 +324,7 @@ figcaption {
 .indent {
   text-align: left;
   margin-left: 4%;
+  max-width: 96%;
 
   @media screen and (max-width: 900px) {
     margin-left: 8%;

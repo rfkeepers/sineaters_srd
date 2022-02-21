@@ -9,7 +9,10 @@ import Options from '@/components/Options.vue';
 <h1 class="title">
     Playtesting Guide
 </h1>
-
+<blockquote>
+    Everybody has a secret world inside of them. I mean everybody. All of the people in the whole world, I mean everybody — no matter how dull and boring they are on the outside. Inside them they've all got unimaginable, magnificent, wonderful, stupid, amazing worlds…
+    <figcaption>Niel Gaiman</figcaption>
+</blockquote>
 <p>
     Hello, and thanks for joining a playtest.  We're just starting on this adventure, figuring out everything from the ground up, and are so glad you're taking part in it.
 </p>

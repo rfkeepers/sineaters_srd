@@ -9,6 +9,10 @@ import Options from '@/components/Options.vue';
 <h1 class="title">
     Harm
 </h1>
+<blockquote>
+    If you drink much from a bottle marked 'poison' it is certain to disagree with you sooner or later.
+    <figcaption>Alice</figcaption>
+</blockquote>
 <p>
     Most of the game takes place in the figments of dying and injured minds.  Within that space everything is simulacra.  A projection of reality. This including the characters themeselves.  They aren't in a real body, they're in a representation of one.
 </p>
@@ -60,13 +64,13 @@ import Options from '@/components/Options.vue';
 ]"/>
 
 <p>
-    PCs...
+    PCs must always take 1 Bane.  In addition, they...
 </p>
 <Options bullet="ϟ" :options="[
-    'Take a Bane',
     'Flee from the scene',
-    'Cower or become unresponsive for a period of time (the GM will say how long)',
-    'Allow the GM to ask them a question, which they must answer honestly',
+    'Lash out in retaliation',
+    'Cower or become unresponsive for a moment (the GM will say how long)',
+    'Allow whatever harmed them to ask a question, which they must answer honestly',
     'Get put at a terrible disadvantage',
     '(Identity only) <working on it...>',
     '(Comprehension only) <working on it...>',

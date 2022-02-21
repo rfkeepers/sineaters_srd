@@ -23,6 +23,7 @@ const closeSidebar = () => {
 };
 
 const setHash = hash => {
+    console.log('setting hash', hash);
     closeSidebar();
     router.replace({ hash: `#${hash}` });
     scrollTo(hash);
@@ -39,11 +40,14 @@ const setHash = hash => {
 <div
     v-for="link in links"
     :key="link.hash"
-    class="menu"
+    :class="{
+        menu: true,
+        menu__outer: depth === 0,
+    }"
 >
     <div
         class="entry"
-        @click="setHash(link.hash)"
+        @click.stop="setHash(link.hash)"
     >
         <div class="entry__label">
             {{link.label}}
@@ -62,12 +66,21 @@ const setHash = hash => {
 <style lang="scss" scoped>
 .menu {
     display: flex;
-    padding-left: 20px;
+    padding-left: 24px;
     font-size: 1.35em;
     color: var(--sidebarMenu-color-text, white);
 
     @media screen and (max-width: 900px) {
         font-size: 1.5em;
+    }
+
+    &__outer {
+        padding-left: 36px;
+        padding-top: 16px;
+
+        @media screen and (max-width: 900px) {
+            padding-top: 8px;
+        }
     }
 }
 
@@ -91,6 +104,7 @@ const setHash = hash => {
 .close {
     position: absolute;
     right: 31px;
+    top: 22px;
     font-size: 1.2em;
     color: var(--sidebarMenu-color-icon, white);
     transform: scaleX(1.5);

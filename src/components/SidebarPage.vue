@@ -104,10 +104,11 @@ onUnmounted(() => {
     ref="page"
 >
     <div
+        id="sidebar_menu_toggle"
         class="menu"
         @click="show"
     >
-        ⭄ Menu
+        ⌬ Menu
     </div>
     <slot name="page" />
 </div>
@@ -142,8 +143,8 @@ onUnmounted(() => {
     width: 360px;
     top: 50px;
 
-    background-color: var(--glossary-color-list-background, black);
-    border-right: 1px solid var(--glossary-color-list-border, white);
+    background-color: var(--sidebarMenu-color-list-background, black);
+    border-right: 1px solid var(--sidebarMenu-color-list-border, white);
 
     display: flex;
     flex-direction: column;

@@ -55,11 +55,6 @@ import Options from '@/components/Options.vue';
     'Work past <strong>your own demons</strong> with time, care, and help',
 ]" />
 
-<blockquote>
-    Everybody has a secret world inside of them. I mean everybody. All of the people in the whole world, I mean everybody — no matter how dull and boring they are on the outside. Inside them they’ve all got unimaginable, magnificent, wonderful, stupid, amazing worlds…
-    <figcaption>Niel Gaiman</figcaption>
-</blockquote>
-<br>
 <div class="alert">
     <p>
         Here for a playtest?  Check out the <router-link to="playtesting">playtesting page</router-link> for a guide.

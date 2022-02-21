@@ -98,6 +98,7 @@ $smlWidth: 28px;
 
     &__item {
         display: flex;
+        color: var(--option-color-bullet, --color-text-norm, green);
 
         &__standard {
             font-size: 1.25em;
@@ -138,7 +139,7 @@ $smlWidth: 28px;
         }
 
         &__text {
-            // included in case the caller wants to deep change the text styling for reasons like alignment.
+            color: var(--color-text-norm);
         }
     }
 }

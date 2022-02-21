@@ -139,6 +139,7 @@ routes = routes.concat([
     component: pockets,
     meta: {
       title: titleMaker('Pocket Realities'),
+      sidebar: true,
       tags: [
         {
           name: 'description',

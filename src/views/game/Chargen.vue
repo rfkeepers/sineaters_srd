@@ -16,21 +16,62 @@ import Options from '@/components/Options.vue';
 <h2>
     What is your name?
 </h2>
+
 <h2>
     What are your pronouns?
 </h2>
+
 <h2>
-    What is your look?
+    Which is your body?
 </h2>
 <br>
-<Options bullet="⌭" asHtml :options="[
-    '<b>Body</b> (choose as many as you want): tall, short, big, small, built, fragile, masculine, feminine, ambiguous, old, young.',
-    '<b>Style:</b> ordinary, fancy, expensive, disheveled, ragged, unique.',
-    '<b>Attitude:</b> mirthful, pensive, irked, eager, curious, worried, flat.',
+<Options bullet="⌭" :options="[
+    'street urchin',
+    'boxing champion',
+    'medical university cadaver',
+    'advertisement etching of the ideal man',
+    'skin like pampered silk on a slight frame',
+    'genetically advantageous for procreation',
+    'carnival sideshow',
+    'plump from wealth',
+    'a statue worn and cracked over time',
 ]"/>
 
 <h2>
-    I am...
+    Which is your aspect?
+</h2>
+<br>
+<Options bullet="⌭" :options="[
+    'a trim corset for the modern woman',
+    'stained in the smoke rising from brick factories',
+    'blue sky daydreams of the wild west',
+    'muck on the well traveled streets',
+    'a child at the nickelodeon',
+    'stranger in a strange land',
+    'hawker singing praises of elixir and venom',
+    'black glasses reflect the crackle of an electrical arc',
+    'guitar and song at a crossroads',
+    'the hanging man’s noose',
+]"/>
+
+<h2>
+    How does your sin feel?
+</h2>
+<br>
+<Options bullet="⌭" :options="[
+    'a foot pressed on my chest',
+    'it has four legs and three mouths and howls',
+    'a portrait with the eyes gouged out',
+    'blood on my lips, flesh for supper',
+    'ice hanging from fingertips',
+    'fairies dancing in my eyes',
+    'a shadow haunts the basement',
+    'breathing through a throat full of cotton',
+    'its blade is sharper than mine',
+]"/>
+
+<h2>
+    Who are you?
 </h2>
 <br>
 <div class="cardHolder">
