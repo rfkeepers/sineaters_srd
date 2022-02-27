@@ -2,6 +2,11 @@
 <script setup>
 import HLink from '@/components/HLink.vue';
 import Options from '@/components/Options.vue';
+import Aid from '@/glossary/moves/Aid.vue';
+import Controlled from '@/glossary/moves/Controlled.vue';
+import Desperation from '@/glossary/moves/Desperation.vue';
+import Interfere from '@/glossary/moves/Interfere.vue';
+
 defineProps({
     embedded: {
         type: Boolean,
@@ -42,13 +47,13 @@ defineProps({
 
     <div class="playExample">
         <p>
-            "This lady is all kinds of shifty," Emmy says, "I think she's got something she's hiding.  I'm going to go up and look her in the eye and say, 'you're awful quiet.  I think you're holding out.  Gonna spill it?'"
+            "This lady is all kinds of shifty," Emilie says, "I think she's got something she's hiding.  I'm going to go up and look her in the eye and say, 'you're awful quiet.  I think you're holding out.  Gonna spill it?'"
         </p>
         <p>
             "Okay," the GM agrees, "lets get a roll.  We're still in the real world, so thats one D12."
         </p>
         <p>
-            <i>Em rolls a 9.</i>  "So close," she says.
+            <i>Emilie rolls a 9.</i>  "So close," she says.
         </p>
         <p>
             "Suzie, the lady, tries to look away and ignore you.  When she realizes you aren't leaving she sighs.  'Look,' she says in a whisper, 'this isn't the sort of thing I can just blurt out.  It's a family secret, one that my brother has worked hard to keep silent.  Get him out of here.  I can't say it with him around, and he's been watching me like a hawk.'"
@@ -103,6 +108,82 @@ defineProps({
         </p>
         <p>
             The GM nods, "yeah.  You give the beast a solid kick, causing it to drop the guy.  It immediately turns its attention to you, growling and snapping at your legs.  You're trying to avoid it, but those big jaws catch you by the foot, tugging at your boot.  What do you do?"
+        </p>
+    </div>
+
+    <HLink
+        id="modifiers"
+        :h="embedded ? 3 : 2"
+    >
+        Modifiers
+    </HLink>
+    <p>
+        Unsatisfied with your lot? Perhaps you'd like to push your chances, or look to a dear friend for assistance.  You've a couple options.  You can make a <em>Controlled</em> or <em>Desperate</em> act to give yourself the edge (by taking on some additional risk).  Or another player can amend your roll with <em>Aid</em> or <em>Interference</em>.
+    </p>
+    <Desperation />
+    <Controlled />
+
+    <div class="playExample">
+        <p>
+            "Adel's just about to the basement doorway," the GM warns. "If he makes it through, you've pretty much lost any chances of catching him and getting your answers."
+        </p>
+        <p>
+            "Cripes," Keepers mutters, "Okay, so I have a 2 and a 3 in my pool.  That's not going to cut it.  If I reroll the pool my Instability goes to... 9, which means you get to introduce something bad?"  The GM nods in agreement.  With a sigh, Keepers says, "I think I'm going to do something desperate here.  So, I originally wanted to grab this dude by the shoulder or his coat or something.  Seeing him get near the door, I'm going in for a tackle instead."
+        </p>
+        <p>
+            <i>Keepers rolls a d6 for desperation: a 3</i>.  "Good news and bad news," the GM muses, "that's an 8 total, so you succeed, you catch this guy!"
+        </p>
+        <p>
+            "Finally!"
+        </p>
+        <p>
+            "But it was a partial success, so there's cost, complication, or a problem.  You went in for a tackle, right?  You took Adel down way harder than you intended.  So he's going to take a bit of damage to the noggin.  Also, what's your Bane right now."
+        </p>
+        <p>
+            Keepers looks at his character sheet, "hmm, 3.  Oh, oh that's bad."
+        </p>
+        <p>
+            "Yeah, it is.  Your desperation rolled 3, which means you took this too far.  So, first, increase that to 4.  Second, you really worked him over.  Adel is in a heap and bleeding all over the place.  When you try to sit him up he's barely responsive, which means he's probably concussed as well.  He needs medical attention as quickly as possible."
+        </p>
+    </div>
+    <br>
+
+    <Aid />
+    <Interfere />
+
+    <div class="playExample">
+        <p>
+            Emilie looks over the figment of Meridith, "How bad is the sickness?  Could I cure her if I <i>Tamper</i> with it?" she asks.
+        </p>
+        <p>
+            The GM thinks for a moment, "I don't think you could cure her entirely.  She's the plaguebearer herself, the sickness is a part of her.  But you could certainly stabilize her condition, maybe help her take control of it."
+        </p>
+        <p>
+            "Gotta do what I can," Emilie says.  "I start rolling up my sleeves.  Anyone want to help me with this?  I'm all out of sedative, and I'll probably need an assistant just in case."
+        </p>
+        <p>
+            "How can I help?" Jazy asks.
+        </p>
+        <p>
+            "Will it count as an Aid if have Jazy around through this?"
+        </p>
+        <p>
+            "Sure," the GM agrees.
+        </p>
+        <p>
+            "Okay," Emilie begins, "I grab some clean cloth and fill up a metal bowl with some water and start giving you instructions: use this to keep her clean, especially if she vomits or anything; hold her arms against the table if she tries to sit up; keep her head steady; that sort of thing.  Ready?"
+        </p>
+        <p>
+            "Ready," Jazy says.
+        </p>
+        <p>
+            <i>Emilie takes two of the last three dice from her pool: 5, 1, and 1.  Jazy takes a 3 from her pool and rolls it again: 4.</i>
+        </p>
+        <p>
+            "Woo! 10!"
+        </p>
+        <p>
+            "Good job," the GM says, "this is going to take you a bit of time to complete- and I want to hear what it looks like for you to <i>Tamper</i> with a figment this way- but by the end she'll be in much better condition.  Might even be able to take control of the plague again."
         </p>
     </div>
 

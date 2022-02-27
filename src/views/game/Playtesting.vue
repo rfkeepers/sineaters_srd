@@ -50,7 +50,7 @@ import Options from '@/components/Options.vue';
 </h2>
 <div class="blurb guideLinks">
     <br>
-    ϟ&nbsp;&nbsp;<router-link to="dicetool">Dice Roller</router-link>
+    ϟ&nbsp;&nbsp;<router-link to="diceroller">Dice Roller</router-link>
 </div>
 </div>
 </template>

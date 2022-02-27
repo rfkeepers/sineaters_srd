@@ -78,7 +78,7 @@ import Options from '@/components/Options.vue';
     <div class="card">
         <h4>The Remedy</h4>
         <p>
-            I want to help you.  Come and let me tend to those wounds.  Show me where it hurts?  It's okay, the worst has already passed.  Tell me all about it, your secrets are safe with me and I have no judgment to pass.  There now, easy does it.  You're not alone any more, I'm with you now.  We'll face this together.
+            I want to help you.  Come and let me tend to those wounds.  Show me where it hurts?  The worst has already passed.  It's okay.  Tell me all about it, your secrets are safe with me and I have no judgment to pass.  There now, easy does it.  You're not alone any more, I'm with you now.  We'll face this together.
         </p>
     </div>
 
@@ -92,21 +92,28 @@ import Options from '@/components/Options.vue';
     <div class="card">
         <h4>The Driven</h4>
         <p>
-            I live for the hunt.  Blood and teeth in darkness.  The wait and the sudden strike.  Trap sprung and trail hot.  Adrenaline veins and blades drawn.  Can you find me a beast in the flesh with more crooked guile than sin incarnate? Is there another creature that can meet eyes with the hunter and know itself equal? I doubt so.
+            I live for the hunt.  Blood and teeth in darkness.  The wait and the sudden strike.  Trap sprung and trail hot.  Adrenaline veins and blades drawn.  Can you find me a beast in the flesh with more crooked guile than sin incarnate? I doubt so.  No other creature alive can meet eyes with the hunter and know itself equal.
         </p>
     </div>
 
     <div class="card">
         <h4>The Trouble</h4>
         <p>
-            I think it takes one to know one.  And I'd bet you believe that deep down these people, the things inside them, all want saving.  That's your mistake: trying to make a human out of the monster, looking for the good side.  Softness will ruin you.  Trust me, there's nothing to save in there.  So you best be ready to pull a trigger, when the time comes.
+            I think it takes one to know one.  And I'd bet you believe that deep down these people, the things inside them, all want saving.  That's your mistake: trying to make a human out of the monster, looking for the good side.  Softness will ruin you.  Trust me, there's nothing to save in there.  So you best be ready to pull a trigger when the time comes.
         </p>
     </div>
 
     <div class="card">
         <h4>The Hungry</h4>
         <p>
-            I feel hollow and full of want.  These people, loaded with glimmer and riches, they have joys like faceted gems.  Dreams that glow.  Comfort and pleasure in pools and, ohhh, the ecstacy when you lap up the waters, it's like nothing the earthly tongue ever tastes. "Take my rot from me", they demand.  And I say, why shouldn't I take more than that?
+            I feel hollow and full of want.  These people, loaded with glimmer and riches, they have joys like faceted gems.  Dreams that glow.  Comfort and pleasure in pools and, ohhh, the ecstacy when you lap up the waters, it's like nothing the earthly tongue ever tastes. "Take my rot from me", they demand.  And I say, "why shouldn't I take more than that?""
+        </p>
+    </div>
+
+    <div class="card">
+        <h4>The Thinker</h4>
+        <p>
+            I am curiosity insatiable.  Axiom: all that exists is measurable; pocket space exists; therefore, transitively, pocket space is measurable. I postulate we only lack the correct tools.  Suppose we monitor the subject by modified spectrograph.  If figments emit a waveform we might record their pattern.  Could we transfer the readings to kinetoscope film?  Alternatively the Nyquist theorem suggests...
         </p>
     </div>
 </div>

@@ -1,23 +1,18 @@
 <!-- ============================== Script ============================== -->
 <script setup>
 import Move from "@/components/Move.vue";
-import Options from "@/components/Options.vue";
-import Roll from "@/components/Roll.vue";
 
-const name = 'Template';
+const name = 'Controlled';
 </script>
 
 <!-- ============================== Template ============================== -->
 <template>
-<Move id="template" leftLined>
+<Move id="controlled" leftLined>
     <template v-slot:name>{{name}}</template>
-    <template v-slot:preconditions>Cost: Abyss / Resilience</template>
     <template v-slot:body>
-        When you <b>do the move</b> and need to learn the consequences, <Roll dice/>.
-        <Options bullet="ϟ" :options="[
-            'Option 1.',
-            'Option 2.',
-        ]" />
+        <p>
+            Whenever you use a move, you can <strong>describe your character acting with strenuous control</strong>.  If you do, roll an additional 1d6 and add its value to the dice you pulled from your pool.  If the die you rolled is higher than your Bane, you're safe, everything goes fine.  If it is equal to or lower than your current Bane, or if it rolls a 1, you're screwed.  Increase your Bane by 1, then the GM will tell you how, in your attempt to get things just right, you took valuable extra time or caused half the effect you wanted.
+        </p>
     </template>
     <template v-slot:example>
         <h3 class="lineTo indent">Design Thoughts</h3>

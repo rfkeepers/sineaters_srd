@@ -8,11 +8,11 @@ import banes from '@/views/game/Banes.vue';
 import chargen from '@/views/game/Chargen.vue';
 import harm from '@/views/game/Harm.vue';
 import playtesting from '@/views/game/Playtesting.vue';
-import rolling from '@/views/game/Rolling.vue';
-
 import pockets from '@/views/setting/Pockets.vue';
+import rolling from '@/views/game/Rolling.vue';
 import setting from '@/views/setting/Setting.vue';
 
+import diceroller from '@/views/mechanical/DiceRoller.vue';
 
 import glossary from '@/views/site/Glossary.vue';
 import glossaryHome from '@/glossary/GlossaryHome.vue';
@@ -101,15 +101,16 @@ routes = routes.concat([
     },
   },
   {
-    path: '/playtesting',
-    name: 'Playtesting',
-    component: playtesting,
+    path: '/pockets',
+    name: 'Pocket Realities',
+    component: pockets,
     meta: {
-      title: titleMaker('Playtesting'),
+      title: titleMaker('Pocket Realities'),
+      sidebar: true,
       tags: [
         {
           name: 'description',
-          content: 'The playtesting guide for Sin Eaters.',
+          content: 'How pocket realities work in the setting of Sin Eaters.',
         }
       ],
     },
@@ -124,26 +125,6 @@ routes = routes.concat([
         {
           name: 'description',
           content: 'The dice rolling and resolution mechanics in Sin Eaters.',
-        }
-      ],
-    },
-  },
-]);
-
-// -------------------------------------------------------------------------------------
-// the system settings
-routes = routes.concat([
-  {
-    path: '/pockets',
-    name: 'Pocket Realities',
-    component: pockets,
-    meta: {
-      title: titleMaker('Pocket Realities'),
-      sidebar: true,
-      tags: [
-        {
-          name: 'description',
-          content: 'How pocket realities work in the setting of Sin Eaters.',
         }
       ],
     },
@@ -165,8 +146,42 @@ routes = routes.concat([
 ]);
 
 // -------------------------------------------------------------------------------------
+// references
+routes = routes.concat([
+  {
+    path: '/playtesting',
+    name: 'Playtesting',
+    component: playtesting,
+    meta: {
+      title: titleMaker('Playtesting'),
+      tags: [
+        {
+          name: 'description',
+          content: 'The playtesting guide for Sin Eaters.',
+        }
+      ],
+    },
+  },
+  {
+    path: '/diceroller',
+    name: 'Dice Roller',
+    component: diceroller,
+    meta: {
+      title: titleMaker('Dice Roller'),
+      tags: [
+        {
+          name: 'description',
+          content: 'Sin Eaters\'s custom dice roller.',
+        }
+      ],
+    },
+  },
+]);
+
+// -------------------------------------------------------------------------------------
 // glossary
-// correct the path for the glossary entries
+
+// correct sthe path for the glossary entries
 glossaryRoutes.forEach(gr => {
   gr.meta.title = titleMaker(gr.meta.title);
   gr.path = gr.path.substring(1);

@@ -70,6 +70,16 @@ $color-neutral: #29363D;
   --sidebarMenu-color-text: var(--color-headers-lighter);
 
   --stat-color: var(--color-highlight-norm);
+
+  --tracker-color-button-border: var(--color-neutral-norm);
+  --tracker-color-button-border-selected: var(--color-detail-lighter);
+  --tracker-color-button-hover: var(--color-neutral-darker);
+  --tracker-color-button-text: var(--color-text-norm);
+  --tracker-color-die-border: var(--color-headers-lighter);
+  --tracker-color-die-focus: var(--color-detail-lighter);
+  --tracker-color-die-selected: var(--color-neutral-darker);
+  --tracker-color-outcome-title: var(--color-headers-norm);
+  --tracker-color-text-warn: var(--color-detail-norm);
 }
 
 // ------------------ elements
@@ -107,6 +117,21 @@ a {
   }
   &.forceClickable {
     cursor: pointer;
+  }
+}
+
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  padding: 16px 8px;
+
+  &:focus {
+    background: var(--color-headers-dark, purple);
+    outline: var(--color-neutral-norm, purple) solid 1px;
   }
 }
 

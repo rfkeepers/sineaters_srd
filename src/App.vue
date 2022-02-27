@@ -28,7 +28,6 @@ const aboutLinks = [
 ];
 const contentLinks = [
   {to: "/", text: "Home"},
-  {to: "/playtesting", text: "Playtesting"},
   {to: "/rolling", text: "Rolling"},
   {to: "/harm", text: "Harm"},
   {to: "/banes", text: "Banes"},
@@ -36,7 +35,9 @@ const contentLinks = [
   {to: "/setting", text: "The Setting"},
   {to: "/pockets", text: "Pocket Reality"},
 ];
-const glossaryLinks = [
+const referenceLinks = [
+  {to: "/playtesting", text: "Playtesting"},
+  {to: "/diceroller", text: "Dice Roller"},
   {to: "/glossary/landing", text: "Glossary"},
 ];
 
@@ -115,9 +116,8 @@ onUnmounted(() => {
       />
       <div class="headerBar__links__spacer">|</div>
       <NavDropdown
-        v-if="false"
-        name="Support"
-        :links="glossaryLinks"
+        name="Reference"
+        :links="referenceLinks"
       />
       <!-- <NavLink>Glossary</NavLink> -->
       <div class="headerBar__links__spacer">|</div>

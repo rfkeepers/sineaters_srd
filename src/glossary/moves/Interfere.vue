@@ -1,23 +1,18 @@
 <!-- ============================== Script ============================== -->
 <script setup>
 import Move from "@/components/Move.vue";
-import Options from "@/components/Options.vue";
-import Roll from "@/components/Roll.vue";
 
-const name = 'Template';
+const name = 'Interfere';
 </script>
 
 <!-- ============================== Template ============================== -->
 <template>
-<Move id="template" leftLined>
+<Move id="interfere" leftLined>
     <template v-slot:name>{{name}}</template>
-    <template v-slot:preconditions>Cost: Abyss / Resilience</template>
     <template v-slot:body>
-        When you <b>do the move</b> and need to learn the consequences, <Roll dice/>.
-        <Options bullet="ϟ" :options="[
-            'Option 1.',
-            'Option 2.',
-        ]" />
+        <p>
+            When you <em>thwart or impede</em> another PC to stop them from achieving their goals, describe how you get in their way and make life difficult.  Any risk or dangers that occur as a result will affect both of you.  Remove a die from your pool and reroll it .  The player you helped immediately subtracts its value from their current roll.
+        </p>
     </template>
     <template v-slot:example>
         <h3 class="lineTo indent">Design Thoughts</h3>
