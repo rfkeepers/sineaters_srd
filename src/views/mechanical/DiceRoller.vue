@@ -264,6 +264,7 @@ const removeNote = i => {
         {{ modDesperation }}
     </button>
 </div>
+<br>
 <hr v-if="dieSet">
 
 <!-- d12 -->
