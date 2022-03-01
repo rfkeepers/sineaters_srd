@@ -1,17 +1,13 @@
 <!-- ============================== Script ============================== -->
 <script setup>
 import Options from "@/components/Options.vue";
-import { ref, onMounted, onUnmounted } from 'vue';
-
-import { useRoute, useRouter } from 'vue-router';
-const route = useRoute();
-const router = useRouter();
+import { ref } from 'vue';
 
 const randInt = max => Math.floor(Math.random() * max) + 1;
 
-const dieSet = ref(null);
 const dieSetD12 = 'd12';
 const dieSetPool = 'pool';
+const dieSet = ref(dieSetD12);
 
 // instability
 const instability = ref(0);
@@ -40,55 +36,34 @@ const modReasons = {
 
 
 // modifier (desperation and controlled) state
-const modType = ref(null);
+const modType = ref(modNormal);
 const modDie = ref(0);
 const randMod = () => {
     modDie.value = randInt(6);
 };
 
-const setMod = type => {
-    modType.value = type;
-    if (!type) return;
-    type === modNormal
-        ? getOutcome(dieSet.value, dieSet.value === dieSetD12 ? d12.value : poolSum.value)
-        : getOutcome(
-            dieSet.value,
-            dieSet.value === dieSetD12 ? d12.value : poolSum.value,
-            modType.value,
-            modDie.value);
-};
-
-const rollMod = (set, mod) => {
-    switch (set) {
-    case dieSetD12:
-        roll12(mod);
-        break;
-    case dieSetPool:
-        randMod();
-        setMod(mod);
-        break;
-    }
-};
-
 // outcome state
 const outcome = ref(null);
 const getOutcome = (set, value, mod, mValue) => {
-    const roll = value + (mValue || 0);
+    let rollVal = (mod === modDesperation || mod === modControlled)
+        ? value + (mValue || 0)
+        : value;
+    console.log('rollval', rollVal);
     // handle the roll
     switch (set) {
     case dieSetD12:
-        outcome.value = roll < 5 ? rollExplanations.F
-            : roll > 9 ? rollExplanations.S
+        outcome.value = rollVal < 5 ? rollExplanations.F
+            : rollVal > 9 ? rollExplanations.S
             : rollExplanations.P;
             break;
     case dieSetPool:
-        outcome.value = roll < 7 ? rollExplanations.F
-            : roll > 9 ? rollExplanations.S
+        outcome.value = rollVal < 7 ? rollExplanations.F
+            : rollVal > 9 ? rollExplanations.S
             : rollExplanations.P;
             break;
     };
     // handle desperation and outcome
-    if (mod && ((mValue <= banes.value) || (mValue === 1))) {
+    if ((mod && mod !== modNormal) && ((mValue <= banes.value) || (mValue === 1))) {
         outcome.value.mod = mod === modDesperation ? mods[modDesperation] : mods[modControlled];
         outcome.value.mod.reason = mValue === 1 ? modReasons['1'] : modReasons['bane'];
     } else {
@@ -99,40 +74,37 @@ const getOutcome = (set, value, mod, mValue) => {
 const clearOutcome = () => {
     outcome.value = null;
     modType.value = null;
-    randMod();
-    setMod();
+    modType.value = modNormal;
+};
+
+const resetDice = () => {
+    d12.value = 0;
+    pool.value = [];
+    poolSum.value = 0;
+    modDie.value = 0;
+    clearOutcome();
 };
 
 // d12
 const d12 = ref(0);
-const set12 = () => {
-    d12.value = 0;
+const reset12 = () => {
+    resetDice();
     dieSet.value = 'd12';
-    pool.value = [];
-    poolSum.value = 0;
-    clearOutcome();
 };
-const roll12 = mod => {
+const roll12 = () => {
     d12.value = randInt(12);
-    if (mod && mod === modNormal) {
-        modDie.value = 0;
-    } else {
-        randMod();
-    }
-    setMod(mod);
+    randMod();
+    getOutcome(dieSet.value, d12.value, modType.value, modDie.value);
 };
 
 // d6 pool
 const pool = ref([]);
 const poolSum = ref(0);
-const setPool = () => {
-    d12.value = 0;
+const resetPool = () => {
+    resetDice();
     dieSet.value = 'pool';
-    poolSum.value = 0;
-    pool.value.forEach(d => d.selected = false)
-    clearOutcome();
 };
-const rollPool = () => {
+const reRollPool = () => {
     d12.value = 0;
     dieSet.value = 'pool';
     poolSum.value = 0;
@@ -145,6 +117,9 @@ const rollPool = () => {
     instability.value += 1;
     clearOutcome();
 };
+const rollPool = () => {
+    getOutcome(dieSet.value, poolSum.value, modType.value, modDie.value);
+};
 const toggleSelected = i => {
     const d = pool.value[i];
     if (d.selected) {
@@ -155,11 +130,7 @@ const toggleSelected = i => {
         d.selected = true;
     }
     pool.value[i] = d;
-    if (modType.value && modType.value !== modNormal) {
-        getOutcome(dieSet.value, poolSum.value, modType.value, modDie.value);
-    } else {
-        getOutcome(dieSet.value, poolSum.value);
-    }
+    rollPool();
 };
 const consumePool = () => {
     const newPool = [];
@@ -169,8 +140,38 @@ const consumePool = () => {
     pool.value = newPool;
     poolSum.value = 0;
     clearOutcome();
-    if (!pool.value.length) rollPool()
+    if (!pool.value.length) reRollPool()
 };
+
+
+const roll = () => {
+    switch (dieSet.value) {
+    case dieSetD12:
+        roll12();
+        break;
+    case dieSetPool:
+        rollPool();
+        break;
+    }
+};
+
+const clearRoll = () => {
+    d12.value = 0;
+    poolSum.value = 0;
+    pool.value.forEach(d => d.selected = false);
+    modDie.value = 0;
+    clearOutcome();
+};
+
+const addMod = mod => {
+    modType.value = mod;
+    randMod();
+    getOutcome(
+        dieSet.value,
+        dieSet.value === dieSetD12 ? d12.value : poolSum.value,
+        modType.value,
+        modDie.value);
+}
 
 // tags
 const tags = ref([]);
@@ -217,7 +218,7 @@ const removeNote = i => {
             rollBtn: true,
             'rollBtn--selected': dieSet === dieSetD12,
         }"
-        @click="set12"
+        @click="reset12"
     >
         D12
     </button>
@@ -226,12 +227,15 @@ const removeNote = i => {
             rollBtn: true,
             'rollBtn--selected': dieSet === dieSetPool,
         }"
-        @click="setPool"
+        @click="resetPool"
     >
         D6 Pool
     </button>
 </div>
+<br>
+<hr v-if="dieSet">
 
+<!-- d12 -->
 <div
     v-if="dieSet === dieSetD12"
     class="frame frame--withButtons"
@@ -241,7 +245,7 @@ const removeNote = i => {
             rollBtn: true,
             'rollBtn--selected': modType === modControlled,
         }"
-        @click="rollMod(dieSet, modControlled)"
+        @click="modType = modControlled"
     >
         {{ modControlled }}
     </button>
@@ -250,7 +254,7 @@ const removeNote = i => {
             rollBtn: true,
             'rollBtn--selected': modType === modNormal,
         }"
-        @click="rollMod(dieSet, modNormal)"
+        @click="modType = modNormal"
     >
         {{ modNormal }}
     </button>
@@ -259,45 +263,54 @@ const removeNote = i => {
             rollBtn: true,
             'rollBtn--selected': modType === modDesperation,
         }"
-        @click="rollMod(dieSet, modDesperation)"
+        @click="modType = modDesperation"
     >
         {{ modDesperation }}
     </button>
 </div>
-<br>
-<hr v-if="dieSet">
-
-<!-- d12 -->
-<div
-    v-if="d12 > 0"
-    class="frame"
->
-    <div class="rollResult">
-        <div class="die">
-            {{ d12 }}
-        </div>
-        <div v-if="modType && modType != modNormal">
-            &nbsp;+&nbsp;{{ modDie }}
-        </div>
+<div v-if="dieSet === dieSetD12">
+    <div
+        v-if="modType"
+        class="frame frame--withButtons"
+    >
+        <button
+            class="rollBtn"
+            @click="roll"
+        >
+            Roll!
+        </button>
     </div>
     <div
-        v-if="outcome"
-        class="outcome"
+        v-if="d12 > 0"
+        class="frame"
     >
-        <div class="outcome__title">
-            {{ outcome.title }}
-        </div>
-        <div class="outcome__subTitle">
-            {{ outcome.range[dieSet] }}&nbsp;↝&nbsp;{{ outcome.subTitle }}
+        <div class="rollResult">
+            <div class="die">
+                {{ d12 }}
+            </div>
+            <div v-if="modType && modType != modNormal">
+                &nbsp;+&nbsp;{{ modDie }}
+            </div>
         </div>
         <div
-            v-if="outcome.mod"
-            class="outcome__mod"
+            v-if="outcome"
+            class="outcome"
         >
-            <p class="warnText">
-                {{ modType }}&nbsp;{{ outcome.mod.reason }}
-            </p>
-            {{ outcome.mod.text }}
+            <div class="outcome__title">
+                {{ outcome.title }}
+            </div>
+            <div class="outcome__subTitle">
+                {{ outcome.range[dieSet] }}&nbsp;↝&nbsp;{{ outcome.subTitle }}
+            </div>
+            <div
+                v-if="outcome.mod"
+                class="outcome__mod"
+            >
+                <p class="warnText">
+                    {{ modType }}&nbsp;{{ outcome.mod.reason }}
+                </p>
+                {{ outcome.mod.text }}
+            </div>
         </div>
     </div>
 </div>
@@ -305,11 +318,24 @@ const removeNote = i => {
 <!-- dice pool -->
 <div v-if="dieSet === dieSetPool">
 
-    <div class="frame">
-        <div
-            v-if="pool.length"
-            class="rollResult rollResult--pool"
+    <div class="frame frame--withButtons">
+        <button
+            class="rollBtn"
+            @click="reRollPool"
         >
+            {{ `${pool.length ? 'Re-' : ''}Roll Pool` }}
+        </button>
+        <button
+            v-if="pool.length"
+            class="rollBtn"
+            :disabled="!poolSum"
+            @click="consumePool"
+        >
+            {{ `${poolSum > 0 ? 'Use Roll' : 'Choose Dice'}` }}
+        </button>
+    </div>
+    <div class="frame">
+        <div class="rollResult rollResult--pool">
             <button
                 v-for="(d, i) in pool"
                 :key="d.id"
@@ -321,14 +347,6 @@ const removeNote = i => {
                 @click="toggleSelected(i)"
             >
                 {{ d.value }}
-            </button>
-        </div>
-        <div v-else>
-            <button
-                class="rollBtn"
-                @click="rollPool"
-            >
-                Roll Pool
             </button>
         </div>
     </div>
@@ -343,7 +361,8 @@ const removeNote = i => {
                 'die--wide': true,
                 'die--selected': modType === modControlled,
             }"
-            @click="rollMod(dieSet, modControlled)"
+            :disabled="!poolSum"
+            @click="addMod(modControlled)"
         >
             {{ modControlled }}
         </button>
@@ -353,7 +372,8 @@ const removeNote = i => {
                 'die--wide': true,
                 'die--selected': modType === modNormal,
             }"
-            @click="rollMod(dieSet, modNormal)"
+            :disabled="!poolSum"
+            @click="addMod(modNormal)"
         >
             {{ modNormal }}
         </button>
@@ -363,7 +383,8 @@ const removeNote = i => {
                 'die--wide': true,
                 'die--selected': modType === modDesperation,
             }"
-            @click="rollMod(dieSet, modDesperation)"
+            :disabled="!poolSum"
+            @click="addMod(modDesperation)"
         >
             {{ modDesperation }}
         </button>
@@ -397,14 +418,6 @@ const removeNote = i => {
                     {{ outcome.mod.text }}
                 </div>
             </div>
-        </div>
-        <div class="frame">
-            <button
-                class="rollBtn"
-                @click="consumePool"
-            >
-                Use Roll
-            </button>
         </div>
     </div>
 </div>
@@ -524,8 +537,17 @@ const removeNote = i => {
         border: 1px solid var(--tracker-color-button-border-selected, orange);
     }
 
+    &--wide {
+        width: 100%;
+    }
+
     &:hover {
         background-color: var(--tracker-color-button-hover, purple);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
     }
 }
 
@@ -599,6 +621,11 @@ const removeNote = i => {
 
     &:focus {
         border-color: var(--tracker-color-die-focus, green);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
     }
 }
 
